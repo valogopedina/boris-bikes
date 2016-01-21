@@ -1,17 +1,18 @@
 require_relative 'bike'
 
 class DockingStation
-  attr_reader :docked_bike
-  # def docked_bike
-  #   @docked_bike
+  attr_reader :bike
+  # def bike
+  #   @bike #=> nil
   # end
 
-	def release_bike
-		Bike.new
-	end
+  def dock(docked_bike)
+    @bike = docked_bike
+  end
 
-	def dock(docked_bike)
-		@docked_bike = docked_bike
+	def release_bike
+    fail 'No bikes available' unless @bike
+    @bike
 	end
 
 	#attr_reader :test_method 	# attr_reader creates a method which returns 
