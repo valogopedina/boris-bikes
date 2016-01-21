@@ -6,25 +6,27 @@ describe DockingStation do
 	#end
 	it { is_expected.to respond_to(:release_bike)} #ok
 
+
 	it 'releases working bike' do #ok
+		subject.dock(Bike.new)
 		bike = subject.release_bike #subject refers to any instance in the specific class 
 		expect(bike).to be_working	# being describe (in this case DockingStation class)
 	end
 
-  it { is_expected.to respond_to(:dock).with(1).argument }#ok
+  	it { is_expected.to respond_to(:dock).with(1).argument }#ok
 
-  it { is_expected.to respond_to(:bike) }#ok
+  	it { is_expected.to respond_to(:bike) }#ok
 
-  it 'docks something' do #ok
-    bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
-  end
+  	it 'docks something' do #ok
+    	bike = Bike.new
+    	expect(subject.dock(bike)).to eq bike
+  	end
 
-  it 'returns docked bikes' do #ok
-    bike = Bike.new
-    subject.dock(bike)
-    expect(subject.bike).to eq bike
-  end
+  	it 'returns docked bikes' do #ok
+    	bike = Bike.new
+    	subject.dock(bike)
+    	expect(subject.bike).to eq bike
+  	end
 
   
 
