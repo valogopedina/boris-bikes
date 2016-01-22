@@ -4,7 +4,7 @@ describe DockingStation do
 	#it 'respond_to release_bike' do
 		#expect(DockingStation).to responde_to(:release_bike)
 	#end
-	it { is_expected.to respond_to(:release_bike)} #ok
+	it { is_expected.to respond_to(:release_bike) } #ok
 
 
 	it 'releases working bike' do #ok
@@ -48,4 +48,10 @@ describe DockingStation do
     	expect { subject.dock(bike) }.to raise_error 'The docking station is full!'
     end
   end
+
+	#it { is_expected.to respond_to(:full?) }
+
+	#it { is_expected.to respond_to(:empty?) }
+
+
 end
