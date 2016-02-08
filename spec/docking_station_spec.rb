@@ -4,25 +4,25 @@ describe DockingStation do
 	#it 'respond_to release_bike' do
 		#expect(DockingStation).to responde_to(:release_bike)
 	#end
-	it { is_expected.to respond_to(:release_bike) } #ok
+	it { is_expected.to respond_to(:release_bike) } 
 
 
-	it 'releases working bike' do #ok
+	it 'releases working bike' do 
 		subject.dock(Bike.new)
-		bike = subject.release_bike #subject refers to any instance in the specific class
-		expect(bike).to be_working	# being describe (in this case DockingStation class)
+		bike = subject.release_bike   #subject refers to any instance in the specific class
+		expect(bike).to be_working	   # being describe (in this case DockingStation class)
 	end
 
-  	it { is_expected.to respond_to(:dock).with(1).argument }#ok
+  	it { is_expected.to respond_to(:dock).with(1).argument }
 
-  	it { is_expected.to respond_to(:bikes) }#ok
+  	it { is_expected.to respond_to(:bikes) }
 
-  	it 'docks something' do #ok
+  	it 'docks something' do 
     	bike = Bike.new
     	expect(subject.dock(bike)).to eq bike
   	end
 
-  	it 'returns docked bikes' do #ok
+  	it 'returns docked bikes' do 
     	bike = Bike.new
     	subject.dock(bike)
     	expect(subject.bikes).to eq bike
@@ -53,5 +53,7 @@ describe DockingStation do
 
 	#it { is_expected.to respond_to(:empty?) }
 
-
+	it 'returns an object when called as an argument' do
+		expect(DockingStation.new(25)).to eq true 
+	end
 end
